@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+  margin: 0;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.button-container {
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(145deg, #ff7b00, #ff4500);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #b34000, 0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #b34000, 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 26px;
+  text-align: center;
+  min-height: 50px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+/* Styl dla fajerwerków */
+.firework {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: yellow;
+  border-radius: 50%;
+  opacity: 0;
+  animation: explode 0.5s ease-out;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(9) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
